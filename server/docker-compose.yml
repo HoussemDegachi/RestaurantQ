@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  reservationDB:
+    image: monog:latest
+    volumes:
+      - /dbs/reservationDB/data/lib
+
+  gateway:
+    image: nginx:latest
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf
