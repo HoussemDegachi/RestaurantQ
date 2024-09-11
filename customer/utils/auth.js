@@ -15,3 +15,7 @@ export async function verifyPassword(plainPassword, hashPassword) {
 export function signToken(userId, expiresIn = "24h") {
   return jwt.sign({ userId }, process.env.JWT_KEY, { expiresIn });
 }
+
+export function verifyToken(token) {
+  return jwt.verify(token, process.env.JWT_KEY);
+}
