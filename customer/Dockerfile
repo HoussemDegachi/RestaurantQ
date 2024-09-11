@@ -8,4 +8,4 @@ RUN npm isntall
 
 COPY . .
 
-CMD ["npm", "Start"]
+CMD ["npm", "start"]

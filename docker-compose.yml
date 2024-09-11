@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   reservationDB:
-    image: monog:latest
+    image: mongo:latest
     volumes:
       - /dbs/reservationDB/data/lib
 
@@ -9,3 +9,9 @@ services:
     image: nginx:latest
     volumes:
       - ./gateway/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - customer
+
+  customer:
+    build: ./customer
+    
